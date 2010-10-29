@@ -1246,15 +1246,15 @@
       </Description>
     </Command>
 
-    <Command Name="SETBATTLESTATUS" Source="client">
+    <Command Name="SETBATTLEPROPERTY" Source="client">
       <Arguments>
+        <Argument Name="battleid" Optional="no" Sentence="no">
+          The battle id of the battle that should be changed 
+        </Argument>
         <Argument Name="username" Optional="no" Sentence="no">
           The username whos battle status should be changed.
-          NOTE: the server is free to reject any or all requested changes
         </Argument>
-        <Argument Name="battlestatus" Optional="no" Sentence="yes">
-          The requested battle status, in JSON encoded "key":value pairs.
-
+        <Argument Name="key" Optional="no" Sentence="no">
           <p>
             only set by the user:
             <ul>
@@ -1279,9 +1279,14 @@
             </ul>
           </p>
         </Argument>
+          
+        <Argument Name="value" Optional="no" Sentence="no">
+          The value of the key
+        </Argument>
       </Arguments>
       <Description>
       Sent by a client to the server telling him to change the status in the battle.
+      NOTE: the server is free to reject any or all requested changes
       </Description>
     </Command>
 

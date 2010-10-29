@@ -1246,6 +1246,45 @@
       </Description>
     </Command>
 
+    <Command Name="SETBATTLESTATUS" Source="client">
+      <Arguments>
+        <Argument Name="username" Optional="no" Sentence="no">
+          The username whos battle status should be changed.
+          NOTE: the server is free to reject any or all requested changes
+        </Argument>
+        <Argument Name="battlestatus" Optional="no" Sentence="yes">
+          The requested battle status, in JSON encoded "key":value pairs.
+
+          <p>
+            only set by the user:
+            <ul>
+              <li>ready</li>
+              <li>maphash</li>
+              <li>modhash</li>
+            </ul>
+
+            only set by the host:
+            <ul>
+              <li> handycap </li>
+            </ul>
+
+
+            set by the user or host:
+            <ul>
+              <li>teamno</li>
+              <li>allyno</li>
+              <li>color</li>
+              <li>spectator</li>
+              <li>side</li>
+            </ul>
+          </p>
+        </Argument>
+      </Arguments>
+      <Description>
+      Sent by a client to the server telling him to change the status in the battle.
+      </Description>
+    </Command>
+
     <Command Name="MYBATTLESTATUS" Source="client">
       <Arguments>
         <Argument Name="battlestatus" Optional="no" Sentence="no">
